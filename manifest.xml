@@ -9,6 +9,12 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/dynamic_graph_actionlib</url>
 
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+
+  <depend package="actionlib_msgs"/>
+
+  <depend package="walk_interfaces"/>
+
+  <depend package="dynamic_graph_bridge"/>
 </package>
-
-
