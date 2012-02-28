@@ -15,6 +15,7 @@ pkg_check_modules(JRL_MAL REQUIRED jrl-mal)
 pkg_check_modules(DYNAMIC_GRAPH REQUIRED dynamic-graph)
 pkg_check_modules(DYNAMIC_GRAPH_PYTHON REQUIRED dynamic-graph-python)
 pkg_check_modules(SOT_CORE REQUIRED sot-core)
+pkg_check_modules(ROBOPTIM_CORE REQUIRED roboptim-core)
 
 include_directories(include)
 
