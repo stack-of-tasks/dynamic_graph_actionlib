@@ -1,7 +1,10 @@
 <package>
-  <description brief="dynamic_graph_actionlib">
+  <description brief="Actionlib support for dynamic-graph">
 
-     dynamic_graph_actionlib
+     Actionlib allows the execution of complex robotics tasks such as
+     door opening. Dynamic-graph allows the implementation of flexible
+     robot controllers. This package makes the link between this
+     supervision level and a dynamic-graph based robot controller.
 
   </description>
   <author>Thomas Moulard</author>
