@@ -2,7 +2,7 @@
 \mainpage
 \htmlinclude manifest.html
 
-\b dynamic_graph_actionlib is ... 
+\b dynamic_graph_actionlib provides actionlib actions for dynamic-graph.
 
 <!-- 
 Provide an overview of your package.

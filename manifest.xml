@@ -12,6 +12,10 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/dynamic_graph_actionlib</url>
 
+  <export>
+    <rosdoc config="rosdoc.yaml" />
+  </export>
+
   <depend package="roscpp"/>
   <depend package="rospy"/>
 
