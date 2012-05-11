@@ -1,0 +1,33 @@
+#! /usr/bin/env python
+
+import roslib; roslib.load_manifest('dynamic_graph_actionlib')
+import rospy
+import actionlib
+
+from dynamic_graph_actionlib.msg import *
+
+from dynamic_graph_bridge.srv import *
+
+class RunCommandsServer(object):
+  def __init__(self):
+    self.server = actionlib.SimpleActionServer(
+      'run_commands', RunDynamicGraphCommandsAction, self.execute, False)
+    self.server.start()
+
+  def execute(self, goal):
+    runCommandSrv = rospy.ServiceProxy('run_command', RunCommand)
+
+    # Check if service exists. If not, fail.
+    # Run the commands.
+    result = runCommandSrv(goal.commands)
+    # Retrieve the output and forward it.
+    actionResult = dynamic_graph_actionlib.msg.RunDynamicGraphCommandsResult()
+    actionResult.result = result.result
+    actionResult.stdout = result.stdout
+    actionResult.stderr = result.stderr
+    self.server.set_succeeded(actionResult)
+
+if __name__ == '__main__':
+  rospy.init_node('run_commands_server')
+  server = RunCommandsServer()
+  rospy.spin()

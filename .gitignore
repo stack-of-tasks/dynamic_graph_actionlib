@@ -19,3 +19,11 @@ msg/ExecuteMotionPlanActionResult.msg
 msg/ExecuteMotionPlanFeedback.msg
 msg/ExecuteMotionPlanGoal.msg
 msg/ExecuteMotionPlanResult.msg
+
+msg/RunDynamicGraphCommandsAction.msg
+msg/RunDynamicGraphCommandsActionFeedback.msg
+msg/RunDynamicGraphCommandsActionGoal.msg
+msg/RunDynamicGraphCommandsActionResult.msg
+msg/RunDynamicGraphCommandsFeedback.msg
+msg/RunDynamicGraphCommandsGoal.msg
+msg/RunDynamicGraphCommandsResult.msg

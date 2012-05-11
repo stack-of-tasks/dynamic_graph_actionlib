@@ -1,0 +1,11 @@
+# Python commnds to be sent to dynamic-graph through the ROS
+# RunCommand service.
+string commands
+---
+# Commands result
+string result
+# Commands standard output
+string stdout
+# Commands error output
+string stderr
+---
