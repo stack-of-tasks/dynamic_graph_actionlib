@@ -1,0 +1,34 @@
+#! /usr/bin/env python
+
+import roslib; roslib.load_manifest('dynamic_graph_actionlib')
+import rospy
+
+import actionlib
+
+import dynamic_graph_actionlib.msg
+
+import sys
+
+def execute_motion_plan_client(commands):
+    client = actionlib.SimpleActionClient(
+        'execute_motion_plan',
+        dynamic_graph_actionlib.msg.ExecuteMotionPlanAction)
+    client.wait_for_server()
+
+    goal = dynamic_graph_actionlib.msg.ExecuteMotionPlanGoal(commands)
+    client.send_goal(goal)
+    client.wait_for_result()
+    return client.get_result()
+
+if __name__ == '__main__':
+    try:
+        rospy.init_node('execute_motion_plan_client_py')
+
+        if len(sys.argv) != 2:
+            print("usage: rosrun dynamic_graph_actionlib" + \
+                      " ExecuteMotionPlanClient <plan>")
+            sys.exit(1)
+
+        result = execute_motion_plan_client(sys.argv[1])
+    except rospy.ROSInterruptException:
+        print "program interrupted before completion"
