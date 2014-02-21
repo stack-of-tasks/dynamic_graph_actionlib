@@ -6,7 +6,7 @@ import actionlib
 
 from dynamic_graph_actionlib.msg import *
 
-from dynamic_graph_bridge.srv import *
+from dynamic_graph_bridge_msgs.srv import *
 
 class RunCommandsServer(object):
   def __init__(self):
